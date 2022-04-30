@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8958992689597265757}
   - component: {fileID: 5475084083338623224}
   - component: {fileID: 7791105029395172402}
+  - component: {fileID: 2536139112163045207}
   m_Layer: 0
   m_Name: Prefab-terrain_roadSplit
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2536139112163045207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8583699050878234087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999999, y: 9.599521e-17, z: 2}
+  m_Center: {x: 0.99999994, y: 4.7997585e-17, z: 0.9999999}

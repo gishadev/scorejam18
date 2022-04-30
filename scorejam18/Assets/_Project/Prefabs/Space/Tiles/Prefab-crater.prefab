@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3651137950868186398}
   - component: {fileID: 361599732348168891}
   - component: {fileID: 2513112236200681073}
+  - component: {fileID: 7700027930176935042}
   m_Layer: 0
   m_Name: Prefab-crater
   m_TagString: Untagged
@@ -82,3 +83,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7700027930176935042
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4170511597854424996}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6243662610250248269, guid: a39d31fafbba2f041a1c81058f877722, type: 3}
