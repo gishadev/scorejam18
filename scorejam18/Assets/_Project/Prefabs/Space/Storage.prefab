@@ -180,6 +180,8 @@ GameObject:
   - component: {fileID: 1513939185}
   - component: {fileID: 7251844319127143533}
   - component: {fileID: 4063782851803384837}
+  - component: {fileID: 8591393484702434143}
+  - component: {fileID: 1949152916842980008}
   m_Layer: 0
   m_Name: Storage
   m_TagString: Untagged
@@ -255,3 +257,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.600845, y: 1.6130197, z: 0.92100465}
   m_Center: {x: 5.8286116e-16, y: 0.7937217, z: -0.5410151}
+--- !u!65 &8591393484702434143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108468564115500717}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.39, y: 1.69183, z: 2.59}
+  m_Center: {x: 1.5058247e-15, y: 0.86014324, z: 0.3940369}
+--- !u!114 &1949152916842980008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108468564115500717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44630cf9c7b8d304a9be325818322a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectablesCountTarget: 3
