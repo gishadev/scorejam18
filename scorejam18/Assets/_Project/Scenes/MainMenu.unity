@@ -270,7 +270,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1093948304, guid: 8fc3d59348717284c90f57e85b6ff1fe, type: 3}
       propertyPath: m_text
-      value: Some guy
+      value: <NULL>
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524495568531813602, guid: 8fc3d59348717284c90f57e85b6ff1fe, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5524495568531813604, guid: 8fc3d59348717284c90f57e85b6ff1fe, type: 3}
       propertyPath: m_Pivot.x

@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Some guy
+  m_text: <NULL>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 35a9305607904704bad39a0cab244bf3, type: 2}
   m_sharedMaterial: {fileID: 2221388704850837297, guid: 35a9305607904704bad39a0cab244bf3, type: 2}
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5524495568531813605
 MonoBehaviour:
   m_ObjectHideFlags: 0
