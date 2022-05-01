@@ -341,8 +341,6 @@ GameObject:
   - component: {fileID: 5730114002426698884}
   - component: {fileID: 9095264862118822125}
   - component: {fileID: 1966352380357991438}
-  - component: {fileID: 2057939103447211461}
-  - component: {fileID: 7695618576224324012}
   - component: {fileID: 7340121220670365042}
   m_Layer: 0
   m_Name: Collectable-Barrels
@@ -428,14 +426,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6090423756395461969}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!65 &1966352380357991438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -447,34 +445,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0999999, y: 0.2006079, z: 0.9928203}
-  m_Center: {x: 0, y: 0.10030395, z: 0}
---- !u!65 &2057939103447211461
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6090423756395461969}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0999999, y: 0.60434455, z: 0.09485674}
-  m_Center: {x: 0, y: 0.30217227, z: 0.44898176}
---- !u!65 &7695618576224324012
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6090423756395461969}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0999999, y: 0.60434455, z: 0.09485674}
-  m_Center: {x: 0, y: 0.30217227, z: -0.4489818}
+  m_Size: {x: 1.0999999, y: 0.62519, z: 0.9928203}
+  m_Center: {x: 0, y: 0.36770225, z: 0}
 --- !u!114 &7340121220670365042
 MonoBehaviour:
   m_ObjectHideFlags: 0
