@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gisha.scorejam18.Core
 {
@@ -9,8 +9,9 @@ namespace Gisha.scorejam18.Core
     {
         [Header("General")] [SerializeField] private float maxRoundTimeInSeconds;
 
-        [Header("UI")] [SerializeField] private TMP_Text timeText;
-        [SerializeField] private Transform timeBar;
+        [Header("UI")] [SerializeField] private Sprite emptySquare;
+        [SerializeField] private Sprite filledSquare;
+        [SerializeField] private Image[] timeImages;
 
         public Action TimeOut;
 
@@ -39,8 +40,12 @@ namespace Gisha.scorejam18.Core
 
         private void UpdateUI()
         {
-            timeText.text = Mathf.Round(_currentTime).ToString();
-            timeBar.transform.localScale = new Vector3(_currentTime / maxRoundTimeInSeconds, 1f, 1f);
+            int activeCount = Mathf.FloorToInt(_currentTime / maxRoundTimeInSeconds * timeImages.Length);
+
+            for (int i = 0; i < timeImages.Length; i++)
+            {
+                timeImages[i].sprite = i <= activeCount ? filledSquare : emptySquare;
+            }
         }
     }
 }
