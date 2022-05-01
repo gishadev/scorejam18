@@ -6242,7 +6242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a9901f641846bfa8aae7008c167c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFps: 60
+  maxFps: 120
 --- !u!1001 &550799425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23656,6 +23656,18 @@ PrefabInstance:
     - target: {fileID: 3546816070986109766, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
       propertyPath: m_Name
       value: Manipulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041463263623663935, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733288817019833871, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
+      propertyPath: breakSqrRadius
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733288817019833871, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
+      propertyPath: magnetEffectRadius
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbc256c053bbfa74ead019a65b489061, type: 3}

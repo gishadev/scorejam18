@@ -41,6 +41,8 @@ namespace Gisha.scorejam18.Gameplay
                         breakSqrRadius)
                     {
                         _capturedRb = rb;
+                        _capturedRb.GetComponent<Collider>().enabled = false;
+                        _capturedRb.isKinematic = true;
                         _capturedRb.transform.SetParent(transform);
                     }
                 }
@@ -59,6 +61,8 @@ namespace Gisha.scorejam18.Gameplay
             if (_capturedRb != null)
             {
                 _capturedRb.transform.SetParent(null);
+                _capturedRb.GetComponent<Collider>().enabled = true;
+                _capturedRb.isKinematic = false;
                 _capturedRb.AddForce(magnetOrigin.forward * pushForce, ForceMode.Impulse);
                 _capturedRb = null;
             }
