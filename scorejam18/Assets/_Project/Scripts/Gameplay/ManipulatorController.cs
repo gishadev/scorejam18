@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Gisha.scorejam18
+namespace Gisha.scorejam18.Gameplay
 {
     [RequireComponent(typeof(Rigidbody))]
     public class ManipulatorController : MonoBehaviour

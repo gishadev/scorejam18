@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gisha.scorejam18
+namespace Gisha.scorejam18.Gameplay
 {
     public class Magnet : MonoBehaviour
     {

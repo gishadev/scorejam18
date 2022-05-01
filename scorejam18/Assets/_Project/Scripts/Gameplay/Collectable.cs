@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gisha.scorejam18
+namespace Gisha.scorejam18.Gameplay
 {
     public class Collectable : MonoBehaviour
     {
