@@ -1,4 +1,5 @@
-﻿using Gisha.scorejam18.Gameplay;
+﻿using System;
+using Gisha.scorejam18.Gameplay;
 using UnityEngine;
 
 namespace Gisha.scorejam18.Core
@@ -7,22 +8,31 @@ namespace Gisha.scorejam18.Core
     {
         private static GameManager Instance { get; set; }
 
+        private GameTimer _gameTimer;
         private Collector[] _collectors;
         
         private void Awake()
         {
             Instance = this;
             _collectors = FindObjectsOfType<Collector>();
+            _gameTimer = GetComponent<GameTimer>();
+        }
+
+        private void Start()
+        {
+            _gameTimer.StartTimer();
         }
 
         private void OnEnable()
         {
             Collector.CollectableAcquired += OnCollectableAcquired;
+            _gameTimer.TimeOut += Lose;
         }
 
         private void OnDisable()
         {
             Collector.CollectableAcquired -= OnCollectableAcquired;
+            _gameTimer.TimeOut -= Lose;
         }
         
         private void OnCollectableAcquired()

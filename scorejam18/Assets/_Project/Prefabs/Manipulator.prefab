@@ -448,9 +448,9 @@ MonoBehaviour:
   magnetOrigin: {fileID: 4041463263623663935}
   magnetEffectDistance: 2
   magnetEffectRadius: 0.49
-  breakSqrRadius: 0.88
-  magnetPower: 14
-  pushForce: 20
+  breakSqrRadius: 1.2
+  magnetPower: 20
+  pushForce: 35
 --- !u!1 &7593354213779050283
 GameObject:
   m_ObjectHideFlags: 0
