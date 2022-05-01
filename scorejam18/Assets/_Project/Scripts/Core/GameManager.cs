@@ -10,7 +10,7 @@ namespace Gisha.scorejam18.Core
 
         private GameTimer _gameTimer;
         private Collector[] _collectors;
-        
+
         private void Awake()
         {
             Instance = this;
@@ -34,7 +34,7 @@ namespace Gisha.scorejam18.Core
             Collector.CollectableAcquired -= OnCollectableAcquired;
             _gameTimer.TimeOut -= Lose;
         }
-        
+
         private void OnCollectableAcquired()
         {
             foreach (var collector in _collectors)
@@ -45,7 +45,7 @@ namespace Gisha.scorejam18.Core
 
             Win();
         }
-        
+
         public static void Win()
         {
             Debug.Log("You won!");
@@ -55,6 +55,8 @@ namespace Gisha.scorejam18.Core
         {
             Instance._gameTimer.StopTimer();
             UIManager.Instance.ShowLosePopup();
+
+            LeaderboardsSDKController.SubmitScore(PlayerPrefs.GetString("Nickname"), ScoreManager.CurrentScore);
         }
     }
 }
