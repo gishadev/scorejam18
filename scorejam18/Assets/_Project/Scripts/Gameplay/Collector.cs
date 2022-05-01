@@ -1,4 +1,5 @@
 using System;
+using Gisha.scorejam18.Core;
 using TMPro;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ namespace Gisha.scorejam18.Gameplay
         private void CheckCollectables()
         {
             countText.text = $"{_collectablesCount} of {collectablesCountTarget}";
-            if (_collectablesCount >= collectablesCountTarget) 
+            if (_collectablesCount >= collectablesCountTarget)
                 IsReady = true;
         }
 
@@ -29,9 +30,13 @@ namespace Gisha.scorejam18.Gameplay
             if (other.CompareTag("Collectable"))
             {
                 _collectablesCount++;
-                CheckCollectables();
-                CollectableAcquired?.Invoke();
                 
+                var collectable = other.GetComponent<Collectable>();
+                ScoreManager.AddScore(collectable.Price);
+                CheckCollectables();
+                
+                CollectableAcquired?.Invoke();
+
                 Destroy(other.gameObject);
             }
         }

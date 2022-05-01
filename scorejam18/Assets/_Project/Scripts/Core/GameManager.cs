@@ -1,5 +1,4 @@
-﻿using System;
-using Gisha.scorejam18.Gameplay;
+﻿using Gisha.scorejam18.Gameplay;
 using UnityEngine;
 
 namespace Gisha.scorejam18.Core

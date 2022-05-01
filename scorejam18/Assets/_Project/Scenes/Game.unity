@@ -6555,6 +6555,7 @@ GameObject:
   - component: {fileID: 542808425}
   - component: {fileID: 542808424}
   - component: {fileID: 542808426}
+  - component: {fileID: 542808428}
   - component: {fileID: 542808427}
   m_Layer: 0
   m_Name: GameManager
@@ -6628,6 +6629,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFps: 120
+--- !u!114 &542808428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542808423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6715d0499b8b74045a20ab7419e50b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyText: {fileID: 621686400}
 --- !u!1001 &550799425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7826,7 +7840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $100
+  m_text: $0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3d302c368121454098c5095fcb8c219, type: 2}
   m_sharedMaterial: {fileID: -3439254511163266133, guid: c3d302c368121454098c5095fcb8c219, type: 2}
@@ -7853,8 +7867,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.1
-  m_fontSizeBase: 70.1
+  m_fontSize: 62
+  m_fontSizeBase: 62
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19772,8 +19786,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.9
-  m_fontSizeBase: 54.9
+  m_fontSize: 47.8
+  m_fontSizeBase: 47.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
