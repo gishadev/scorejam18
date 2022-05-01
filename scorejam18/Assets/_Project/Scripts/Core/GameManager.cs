@@ -1,4 +1,5 @@
 ﻿using Gisha.scorejam18.Gameplay;
+using Gisha.scorejam18.UI;
 using UnityEngine;
 
 namespace Gisha.scorejam18.Core
@@ -52,7 +53,8 @@ namespace Gisha.scorejam18.Core
 
         public static void Lose()
         {
-            Debug.Log("You lose!");
+            Instance._gameTimer.StopTimer();
+            UIManager.Instance.ShowLosePopup();
         }
     }
 }

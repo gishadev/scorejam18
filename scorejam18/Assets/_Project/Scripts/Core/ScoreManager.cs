@@ -9,7 +9,7 @@ namespace Gisha.scorejam18.Core
 
         [SerializeField] private TMP_Text moneyText;
 
-        public int CurrentScore { get; private set; }
+        public static int CurrentScore { get; private set; }
 
         private void Awake()
         {
@@ -18,8 +18,8 @@ namespace Gisha.scorejam18.Core
 
         public static void AddScore(int count)
         {
-            Instance.CurrentScore += count;
-            Instance.moneyText.text = "$" + Instance.CurrentScore;
+            CurrentScore += count;
+            Instance.moneyText.text = "$" + CurrentScore;
         }
     }
 }

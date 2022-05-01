@@ -23,6 +23,11 @@ namespace Gisha.scorejam18.Core
             StartCoroutine(TimerCoroutine());
         }
 
+        public void StopTimer()
+        {
+            StopAllCoroutines();
+        }
+
         private IEnumerator TimerCoroutine()
         {
             while (true)
