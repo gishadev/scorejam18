@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Gisha.scorejam18
@@ -22,6 +23,18 @@ namespace Gisha.scorejam18
             _rb = GetComponent<Rigidbody>();
         }
 
+        private void OnEnable()
+        {
+            armJoystick.OnJoystickPointerDown += Magnetize;
+            armJoystick.OnJoystickPointerUp += MagnetPush;
+        }
+
+        private void OnDisable()
+        {
+            armJoystick.OnJoystickPointerDown -= Magnetize;
+            armJoystick.OnJoystickPointerUp -= MagnetPush;
+        }
+
         private void Update()
         {
             GetInput();
@@ -35,12 +48,14 @@ namespace Gisha.scorejam18
             BodyMove();
         }
 
-        public void Magnetize()
+        private void Magnetize()
         {
-            if (!_magnet.IsActive)
-                _magnet.TurnOn();
-            else
-                _magnet.TurnOff();
+            _magnet.Magnetize();
+        }
+
+        private void MagnetPush()
+        {
+            _magnet.Push();
         }
 
         private void GetInput()

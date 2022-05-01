@@ -22986,18 +22986,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3546816070986109760, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
-      propertyPath: m_Constraints
-      value: 116
+    - target: {fileID: 460941822691635777, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
+      propertyPath: breakSqrRadius
+      value: 0.7
       objectReference: {fileID: 0}
-    - target: {fileID: 3546816070986109761, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
-      propertyPath: armRig
-      value: 
-      objectReference: {fileID: 1951532472712705826}
-    - target: {fileID: 3546816070986109761, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
-      propertyPath: magnet
-      value: 
-      objectReference: {fileID: 3587737268657381707}
+    - target: {fileID: 460941822691635777, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
+      propertyPath: magnetEffectDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3546816070986109761, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
       propertyPath: armJoystick
       value: 
@@ -23056,11 +23052,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
---- !u!4 &1951532472712705826 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3638501296230530425, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
-  m_PrefabInstance: {fileID: 1951532472712705825}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2108468563207671389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23289,14 +23280,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3587737268657381707 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 460941822691635777, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
-  m_PrefabInstance: {fileID: 1951532472712705825}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b091d25e45c33b04dbb1f34bc1363a3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

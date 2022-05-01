@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gisha.scorejam18
@@ -8,15 +8,20 @@ namespace Gisha.scorejam18
         [SerializeField] private Transform magnetOrigin;
         [SerializeField] private float magnetEffectDistance;
         [SerializeField] private float magnetEffectRadius;
-        [SerializeField] private float noBreakDistance;
+        [SerializeField] private float breakSqrRadius;
 
+        [SerializeField] private float magnetPower;
+        [SerializeField] private float pushForce;
+
+
+        private Rigidbody _capturedRb;
         private bool _isActive;
 
         public bool IsActive => _isActive;
 
         private void Update()
         {
-            if (!IsActive)
+            if (!IsActive || _capturedRb != null)
                 return;
 
             var raycastHits = Physics.SphereCastAll(magnetOrigin.position, magnetEffectRadius, magnetOrigin.forward,
@@ -26,21 +31,38 @@ namespace Gisha.scorejam18
             {
                 if (raycastHits[i].collider.CompareTag("Collectable"))
                 {
-                    raycastHits[i].collider.transform.position =
+                    var rb = raycastHits[i].collider.GetComponent<Rigidbody>();
+                    var position =
                         Vector3.MoveTowards(raycastHits[i].collider.transform.position, transform.position,
-                            Time.deltaTime);
+                            magnetPower * Time.deltaTime);
+                    rb.MovePosition(position);
+
+
+                    if ((raycastHits[i].collider.transform.position - magnetOrigin.transform.position).sqrMagnitude <
+                        breakSqrRadius)
+                    {
+                        _capturedRb = rb;
+                        _capturedRb.transform.SetParent(transform);
+                    }
                 }
             }
         }
 
-        public void TurnOn()
+        public void Magnetize()
         {
             _isActive = true;
         }
 
-        public void TurnOff()
+        public void Push()
         {
             _isActive = false;
+
+            if (_capturedRb != null)
+            {
+                _capturedRb.transform.SetParent(null);
+                _capturedRb.AddForce(magnetOrigin.forward * pushForce, ForceMode.Impulse);
+                _capturedRb = null;
+            }
         }
 
         private void OnDrawGizmos()
@@ -48,6 +70,9 @@ namespace Gisha.scorejam18
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(magnetOrigin.position, magnetEffectRadius);
             Gizmos.DrawRay(magnetOrigin.position, magnetOrigin.forward * magnetEffectDistance);
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(magnetOrigin.position, Mathf.Sqrt(breakSqrRadius));
         }
     }
 }
