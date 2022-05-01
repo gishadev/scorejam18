@@ -23008,8 +23008,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 460941822691635777, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
+      propertyPath: magnetPower
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 460941822691635777, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
       propertyPath: breakSqrRadius
-      value: 0.7
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 460941822691635777, guid: fbc256c053bbfa74ead019a65b489061, type: 3}
       propertyPath: magnetEffectDistance

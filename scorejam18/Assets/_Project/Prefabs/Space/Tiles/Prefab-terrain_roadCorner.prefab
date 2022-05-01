@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3338742569804548336}
   - component: {fileID: 1871882506205382485}
   - component: {fileID: 4476213477776765855}
-  - component: {fileID: 2863335542423933185}
+  - component: {fileID: 6392851017982598683}
   m_Layer: 0
   m_Name: Prefab-terrain_roadCorner
   m_TagString: Untagged
@@ -83,8 +83,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2863335542423933185
-BoxCollider:
+--- !u!64 &6392851017982598683
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -93,6 +93,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9999999, y: 0, z: 1.9999999}
-  m_Center: {x: 0.99999994, y: 0, z: 0.99999994}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2493263439858390785, guid: ab219df03d9c5824da0dc8e54ed893b1, type: 3}
