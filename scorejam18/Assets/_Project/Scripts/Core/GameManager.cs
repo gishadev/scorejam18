@@ -47,11 +47,15 @@ namespace Gisha.scorejam18.Core
         {
             Instance._gameTimer.StopTimer();
             UIManager.Instance.ShowWinPopup();
+            
+            AudioManager.Instance.PlaySFX("Victory");
         }
 
         public static void Lose()
         {
             Instance.StartCoroutine(Instance.LoseRoutine());
+            
+            AudioManager.Instance.PlaySFX("Lose");
         }
 
         private void OnCollectableAcquired()
@@ -61,7 +65,7 @@ namespace Gisha.scorejam18.Core
                 if (!collector.IsReady)
                     return;
             }
-
+            
             Win();
         }
 

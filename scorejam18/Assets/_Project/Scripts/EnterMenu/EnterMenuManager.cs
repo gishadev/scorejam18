@@ -1,3 +1,4 @@
+using Gisha.Effects.Audio;
 using LootLocker.Requests;
 using TMPro;
 using UnityEngine;
@@ -20,6 +21,8 @@ namespace Gisha.scorejam18.EnterMenu
             });
 
             SceneManager.LoadScene("MainMenu");
+            
+            AudioManager.PlayClick();
         }
     }
 }

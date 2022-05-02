@@ -1,3 +1,4 @@
+using Gisha.Effects.Audio;
 using UnityEngine;
 
 namespace Gisha.scorejam18.Gameplay
@@ -40,6 +41,11 @@ namespace Gisha.scorejam18.Gameplay
 
             ArmRotate();
             BodyRotate();
+
+            if (Mathf.Abs(_moveHInput) > 0 || Mathf.Abs(_moveVInput) > 0)
+                AudioManager.Instance.PlaySFX("engine");
+            else
+                AudioManager.Instance.StopSFX("engine");
         }
 
         private void FixedUpdate()
@@ -50,11 +56,16 @@ namespace Gisha.scorejam18.Gameplay
         private void Magnetize()
         {
             _magnet.Magnetize();
+            
+            AudioManager.Instance.PlaySFX("magnet");
         }
 
         private void MagnetPush()
         {
             _magnet.Push();
+            
+            AudioManager.Instance.StopSFX("magnet");
+            AudioManager.Instance.PlaySFX("push");
         }
 
         private void GetInput()

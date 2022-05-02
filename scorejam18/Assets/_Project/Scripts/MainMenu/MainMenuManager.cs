@@ -18,15 +18,20 @@ namespace Gisha.scorejam18.MainMenu
         {
             int level = Random.Range(1, 4);
             SceneManager.LoadScene("Level" + level);
+            
+            AudioManager.PlayClick();
         }
 
         public void OnClick_Settings()
         {
+            AudioManager.PlayClick();
         }
 
         public void OnClick_Exit()
         {
             Application.Quit();
+            
+            AudioManager.PlayClick();
         }
     }
 }

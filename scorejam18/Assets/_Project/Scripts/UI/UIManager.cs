@@ -1,4 +1,5 @@
-﻿using Gisha.scorejam18.Core;
+﻿using Gisha.Effects.Audio;
+using Gisha.scorejam18.Core;
 using TMPro;
 using UnityEngine;
 
@@ -39,11 +40,15 @@ namespace Gisha.scorejam18.UI
         public void OnClick_ReturnToMenu()
         {
             GameManager.Instance.LoadMenu();
+            
+            AudioManager.PlayClick();
         }
 
         public void OnClick_NextRound()
         {
             GameManager.Instance.LoadRandomLevel();
+            
+            AudioManager.PlayClick();
         }
     }
 }

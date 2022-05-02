@@ -60,6 +60,12 @@ namespace Gisha.Effects.Audio
             }
         }
 
+        public static void PlayClick()
+        {
+            Instance.PlaySFX("Click");
+        }
+
+
         private void SetUpAudioArray(AudioData[] _array)
         {
             for (int i = 0; i < _array.Length; i++)
@@ -158,6 +164,18 @@ namespace Gisha.Effects.Audio
 
             AudioData data = sfxCollection[index];
             data.AudioSource.Play();
+        }
+
+        public void StopSFX(string _name)
+        {
+            AudioData data = Array.Find(sfxCollection, sfx => sfx.Name == _name);
+            if (data == null)
+            {
+                Debug.LogError("There is no sfx with name " + _name);
+                return;
+            }
+
+            data.AudioSource.Stop();
         }
 
         #endregion

@@ -87,7 +87,49 @@ MonoBehaviour:
     isFade: 1
     volume: 0.7
     pitch: 1
-  sfxCollection: []
+  sfxCollection:
+  - name: Click
+    audioClip: {fileID: 8300000, guid: 273f6854baffecf409894cce14334a6c, type: 3}
+    isLooping: 0
+    isFade: 0
+    volume: 0.8
+    pitch: 1
+  - name: engine
+    audioClip: {fileID: 8300000, guid: 2621f0a6850083745ad7dd4014c899da, type: 3}
+    isLooping: 0
+    isFade: 0
+    volume: 0.2
+    pitch: 1.5
+  - name: magnet
+    audioClip: {fileID: 8300000, guid: 4c19bd47ed8757e40840d8abdf9d39fa, type: 3}
+    isLooping: 0
+    isFade: 0
+    volume: 0.25
+    pitch: 1
+  - name: push
+    audioClip: {fileID: 8300000, guid: c0d5425eec744434d828391737578bcf, type: 3}
+    isLooping: 0
+    isFade: 0
+    volume: 0.25
+    pitch: 1
+  - name: victory
+    audioClip: {fileID: 8300000, guid: 7dde4be35c8632c4699fd79dd73c3633, type: 3}
+    isLooping: 0
+    isFade: 0
+    volume: 0.5
+    pitch: 1
+  - name: lose
+    audioClip: {fileID: 8300000, guid: 0ce1cb4dfe0c8f94a99048fc14f4865f, type: 3}
+    isLooping: 0
+    isFade: 0
+    volume: 0.5
+    pitch: 1
+  - name: collect
+    audioClip: {fileID: 8300000, guid: a3f352fac87d0b1498b7f962a1683dfb, type: 3}
+    isLooping: 0
+    isFade: 0
+    volume: 0.5
+    pitch: 1
   fadeTransitionSpeed: 0.5
 --- !u!114 &2109939885986401127
 MonoBehaviour:

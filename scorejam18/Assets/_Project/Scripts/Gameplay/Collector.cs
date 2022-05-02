@@ -1,4 +1,5 @@
 using System;
+using Gisha.Effects.Audio;
 using Gisha.scorejam18.Core;
 using TMPro;
 using UnityEngine;
@@ -36,7 +37,8 @@ namespace Gisha.scorejam18.Gameplay
                 CheckCollectables();
                 
                 CollectableAcquired?.Invoke();
-
+                AudioManager.Instance.PlaySFX("collect");
+                
                 Destroy(other.gameObject);
             }
         }
