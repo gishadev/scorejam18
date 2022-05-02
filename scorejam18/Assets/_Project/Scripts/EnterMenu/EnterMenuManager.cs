@@ -1,3 +1,4 @@
+using LootLocker.Requests;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,11 +11,15 @@ namespace Gisha.scorejam18.EnterMenu
 
         public void OnClick_Enter()
         {
-            if (!string.IsNullOrEmpty(companyInput.text))
+            LootLockerSDKManager.SetPlayerName(companyInput.text, (response) =>
             {
-               // PlayerPrefs.SetString("PlayerID", companyInput.text);
-                SceneManager.LoadScene("MainMenu");
-            }
+                if (response.success)
+                    Debug.Log("Name was changed!");
+                else
+                    Debug.Log("Name changing failed! " + response.Error);
+            });
+
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
