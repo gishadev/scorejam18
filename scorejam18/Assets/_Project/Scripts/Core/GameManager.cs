@@ -63,7 +63,8 @@ namespace Gisha.scorejam18.Core
 
         public void LoadRandomLevel()
         {
-            SceneManager.LoadScene("Game");
+            int level = Random.Range(1, 4);
+            SceneManager.LoadScene("Level" + level);
         }
 
         public void LoadMenu()

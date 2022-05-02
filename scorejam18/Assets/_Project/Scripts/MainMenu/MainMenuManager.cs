@@ -7,7 +7,8 @@ namespace Gisha.scorejam18.MainMenu
     {
         public void OnClick_Play()
         {
-            SceneManager.LoadScene("Game");
+            int level = Random.Range(1, 4);
+            SceneManager.LoadScene("Level" + level);
         }
 
         public void OnClick_Settings()
