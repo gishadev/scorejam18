@@ -1,5 +1,4 @@
-﻿using System;
-using Gisha.scorejam18.Core;
+﻿using Gisha.scorejam18.Core;
 using TMPro;
 using UnityEngine;
 
@@ -13,10 +12,11 @@ namespace Gisha.scorejam18.UI
         [SerializeField] private GameObject winPopup;
 
         [Header("Lose Popup")] [SerializeField]
-        private TMP_Text currentScoreText;
+        private TMP_Text loseCurrentScoreText;
 
         [SerializeField] private TMP_Text highScoreText;
 
+        [Header("Win Popup")] [SerializeField] private TMP_Text winCurrentScoreText;
 
         private void Awake()
         {
@@ -25,21 +25,25 @@ namespace Gisha.scorejam18.UI
 
         public void ShowLosePopup()
         {
-            currentScoreText.text = "$" + ScoreManager.CurrentScore;
-            highScoreText.text = "$" + ScoreManager.CurrentScore;
+            loseCurrentScoreText.text = "$" + PlayerManager.CurrentScore;
+           // highScoreText.text = "$" + LeaderboardController.GetHighScore(PlayerPrefs.GetString("Nickname"));
             losePopup.SetActive(true);
         }
 
         public void ShowWinPopup()
         {
+            winCurrentScoreText.text = "$" + PlayerManager.CurrentScore;
+            winPopup.SetActive(true);
         }
 
         public void OnClick_ReturnToMenu()
         {
+            GameManager.Instance.LoadMenu();
         }
 
         public void OnClick_NextRound()
         {
+            GameManager.Instance.LoadRandomLevel();
         }
     }
 }

@@ -1,19 +1,23 @@
-﻿using Gisha.scorejam18.Gameplay;
+﻿using System.Collections;
+using Gisha.scorejam18.Gameplay;
 using Gisha.scorejam18.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Gisha.scorejam18.Core
 {
     public class GameManager : MonoBehaviour
     {
-        private static GameManager Instance { get; set; }
+        public static GameManager Instance { get; set; }
 
+        private LeaderboardController _leaderboardController;
         private GameTimer _gameTimer;
         private Collector[] _collectors;
 
         private void Awake()
         {
             Instance = this;
+            _leaderboardController = FindObjectOfType<LeaderboardController>();
             _collectors = FindObjectsOfType<Collector>();
             _gameTimer = GetComponent<GameTimer>();
         }
@@ -35,6 +39,17 @@ namespace Gisha.scorejam18.Core
             _gameTimer.TimeOut -= Lose;
         }
 
+        public static void Win()
+        {
+            Instance._gameTimer.StopTimer();
+            UIManager.Instance.ShowWinPopup();
+        }
+
+        public static void Lose()
+        {
+            Instance.StartCoroutine(Instance.LoseRoutine());
+        }
+
         private void OnCollectableAcquired()
         {
             foreach (var collector in _collectors)
@@ -46,17 +61,24 @@ namespace Gisha.scorejam18.Core
             Win();
         }
 
-        public static void Win()
+        public void LoadRandomLevel()
         {
-            Debug.Log("You won!");
+            SceneManager.LoadScene("Game");
         }
 
-        public static void Lose()
+        public void LoadMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
+
+        private IEnumerator LoseRoutine()
         {
             Instance._gameTimer.StopTimer();
             UIManager.Instance.ShowLosePopup();
 
-            LeaderboardsSDKController.SubmitScore(PlayerPrefs.GetString("Nickname"), ScoreManager.CurrentScore);
+            yield return _leaderboardController.SubmitScoreRoutine(PlayerManager.CurrentScore);
+            PlayerManager.CurrentScore = 0;
         }
     }
 }

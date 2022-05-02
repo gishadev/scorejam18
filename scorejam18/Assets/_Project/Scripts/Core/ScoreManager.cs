@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -9,17 +10,20 @@ namespace Gisha.scorejam18.Core
 
         [SerializeField] private TMP_Text moneyText;
 
-        public static int CurrentScore { get; private set; }
-
         private void Awake()
         {
             Instance = this;
         }
 
+        private void Start()
+        {
+            moneyText.text = "$" + PlayerManager.CurrentScore;
+        }
+
         public static void AddScore(int count)
         {
-            CurrentScore += count;
-            Instance.moneyText.text = "$" + CurrentScore;
+            PlayerManager.CurrentScore += count;
+            Instance.moneyText.text = "$" + PlayerManager.CurrentScore;
         }
     }
 }
