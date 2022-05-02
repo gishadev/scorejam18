@@ -26,7 +26,7 @@ namespace Gisha.scorejam18.UI
         public void ShowLosePopup()
         {
             loseCurrentScoreText.text = "$" + PlayerManager.CurrentScore;
-           // highScoreText.text = "$" + LeaderboardController.GetHighScore(PlayerPrefs.GetString("Nickname"));
+            // highScoreText.text = "$" + LeaderboardController.GetHighScore(PlayerPrefs.GetString("Nickname"));
             losePopup.SetActive(true);
         }
 

@@ -7,7 +7,9 @@ namespace Gisha.Effects.Audio
     public class AudioManager : ImportTarget
     {
         #region Singleton
+
         public static AudioManager Instance { private set; get; }
+
         #endregion
 
         public AudioData[] musicCollection = default;
@@ -22,6 +24,7 @@ namespace Gisha.Effects.Audio
             get => _musicVolume;
             set { _musicVolume = Mathf.Clamp01(value); }
         }
+
         float _musicVolume = 1f;
 
         public float SfxVolume
@@ -29,6 +32,7 @@ namespace Gisha.Effects.Audio
             get => _sfxVolume;
             set { _sfxVolume = Mathf.Clamp01(value); }
         }
+
         float _sfxVolume = 1f;
 
         public bool IsMusicMuted => MusicVolume == 0;
@@ -72,10 +76,13 @@ namespace Gisha.Effects.Audio
                 _array[i].AudioSource.volume = _array[i].Volume;
                 _array[i].AudioSource.pitch = _array[i].Pitch;
                 _array[i].AudioSource.loop = _array[i].IsLooping;
+                _array[i].AudioSource.playOnAwake = false;
+                _array[i].AudioSource.Stop();
             }
         }
 
         #region Play Music
+
         public void PlayMusic(string _name)
         {
             Debug.Log("Playing Music");
@@ -85,13 +92,11 @@ namespace Gisha.Effects.Audio
                 Debug.LogError("There is no music with name " + _name);
                 return;
             }
-            else
-            {
-                _previousMusic = _currentMusic;
-                _currentMusic = data;
 
-                PlayNextMusicTrack();
-            }
+            _previousMusic = _currentMusic;
+            _currentMusic = data;
+
+            PlayNextMusicTrack();
         }
 
         public void PlayMusic(int index)
@@ -101,6 +106,7 @@ namespace Gisha.Effects.Audio
                 Debug.LogError("There is no music with index " + index);
                 return;
             }
+
             AudioData data = musicCollection[index];
 
             _previousMusic = _currentMusic;
@@ -111,6 +117,9 @@ namespace Gisha.Effects.Audio
 
         private void PlayNextMusicTrack()
         {
+            for (int i = 0; i < musicCollection.Length; i++)
+                musicCollection[i].AudioSource.Stop();
+
             _currentMusic.AudioSource.Play();
 
             if (!_currentMusic.IsFade && _previousMusic != null) _previousMusic.AudioSource.Stop();
@@ -120,9 +129,11 @@ namespace Gisha.Effects.Audio
                 if (_previousMusic != null) StartCoroutine(FadeOut(_previousMusic));
             }
         }
+
         #endregion
 
         #region Play SFX
+
         public void PlaySFX(string _name)
         {
             AudioData data = Array.Find(sfxCollection, sfx => sfx.Name == _name);
@@ -148,9 +159,11 @@ namespace Gisha.Effects.Audio
             AudioData data = sfxCollection[index];
             data.AudioSource.Play();
         }
+
         #endregion
 
         #region Fade Transition
+
         private IEnumerator FadeIn(AudioData _audioData)
         {
             _audioData.AudioSource.volume = 0;
@@ -174,15 +187,18 @@ namespace Gisha.Effects.Audio
                 _audioData.AudioSource.volume = volume;
                 yield return new WaitForSeconds(0.1f);
             }
+
             if (_audioData.AudioSource.volume == 0)
             {
                 _audioData.AudioSource.Stop();
                 _audioData.AudioSource.volume = _audioData.Volume;
             }
         }
+
         #endregion
 
         #region Volume
+
         public void SetMusicVolume(float volume)
         {
             MusicVolume = volume;
@@ -198,9 +214,11 @@ namespace Gisha.Effects.Audio
             for (int i = 0; i < sfxCollection.Length; i++)
                 sfxCollection[i].AudioSource.volume = volume;
         }
+
         #endregion
 
         #region ImportTarget
+
         public override void Import(string _collection, ResourceData[] _resources)
         {
             AudioData[] newCollection = new AudioData[_resources.Length];
@@ -218,6 +236,7 @@ namespace Gisha.Effects.Audio
 
             GetType().GetField(_collection).SetValue(this, newCollection);
         }
+
         #endregion
     }
 }

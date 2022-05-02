@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6732655041311139779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6073245822070217465}
+  - component: {fileID: 8558454674520798666}
+  - component: {fileID: 2109939885986401127}
+  m_Layer: 0
+  m_Name: EffectsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6073245822070217465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6732655041311139779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8558454674520798666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6732655041311139779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf4889b9d97c794d84d0d3cfaf98388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicCollection:
+  - name: GameMusic1
+    audioClip: {fileID: 8300000, guid: 20383378bb6ba413ba4c747f1c75cd33, type: 3}
+    isLooping: 1
+    isFade: 1
+    volume: 0.7
+    pitch: 1
+  - name: GameMusic2
+    audioClip: {fileID: 8300000, guid: c981398e0f2b645919055fbdaddc45cd, type: 3}
+    isLooping: 1
+    isFade: 1
+    volume: 0.7
+    pitch: 1
+  - name: GameMusic3
+    audioClip: {fileID: 8300000, guid: c36ab29716bdf4950b60ad6e621ec993, type: 3}
+    isLooping: 1
+    isFade: 1
+    volume: 0.7
+    pitch: 1
+  - name: GameMusic4
+    audioClip: {fileID: 8300000, guid: 77b002bbaf2334396ac943362747bed2, type: 3}
+    isLooping: 1
+    isFade: 0
+    volume: 0.7
+    pitch: 1
+  - name: GameMusic5
+    audioClip: {fileID: 8300000, guid: c388297b760374f34b584cd4c571c254, type: 3}
+    isLooping: 1
+    isFade: 1
+    volume: 0.7
+    pitch: 1
+  - name: MenuMusic1
+    audioClip: {fileID: 8300000, guid: 6ae4e594a1ee3426a9c513a001e5668d, type: 3}
+    isLooping: 1
+    isFade: 1
+    volume: 0.7
+    pitch: 1
+  - name: MenuMusic2
+    audioClip: {fileID: 8300000, guid: 841bc7feb19ef49a286576f66e703169, type: 3}
+    isLooping: 1
+    isFade: 1
+    volume: 0.7
+    pitch: 1
+  sfxCollection: []
+  fadeTransitionSpeed: 0.5
+--- !u!114 &2109939885986401127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6732655041311139779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2ff00276b0776469f155ed2733ba8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectsCollection: []

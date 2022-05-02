@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Gisha.Effects.Audio;
 using Gisha.scorejam18.Gameplay;
 using Gisha.scorejam18.UI;
 using UnityEngine;
@@ -24,6 +25,9 @@ namespace Gisha.scorejam18.Core
 
         private void Start()
         {
+            int randomMusic = Random.Range(1, 3);
+            AudioManager.Instance.PlayMusic("GameMusic" + randomMusic);
+            
             _gameTimer.StartTimer();
         }
 
