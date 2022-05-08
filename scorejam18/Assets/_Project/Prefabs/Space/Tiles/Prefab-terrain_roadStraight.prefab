@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8299720577249240893}
   - component: {fileID: 6109819736300721143}
   - component: {fileID: -8443511718084639831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prefab-terrain_roadStraight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

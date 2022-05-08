@@ -1,4 +1,5 @@
 using Gisha.Effects.Audio;
+using Gisha.scorejam18.Core;
 using UnityEngine;
 
 namespace Gisha.scorejam18.Gameplay
@@ -6,9 +7,6 @@ namespace Gisha.scorejam18.Gameplay
     [RequireComponent(typeof(Rigidbody))]
     public class ManipulatorController : MonoBehaviour
     {
-        [Header("Joysticks")] [SerializeField] private Joystick movementJoystick;
-        [SerializeField] private Joystick armJoystick;
-
         [Header("General")] [SerializeField] private float moveSpeed;
         [SerializeField] private Transform armRig;
 
@@ -25,14 +23,14 @@ namespace Gisha.scorejam18.Gameplay
 
         private void OnEnable()
         {
-            armJoystick.OnJoystickPointerDown += Magnetize;
-            armJoystick.OnJoystickPointerUp += MagnetPush;
+            InputManager.PointerDown += Magnetize;
+            InputManager.PointerUp += MagnetPush;
         }
-
+        
         private void OnDisable()
         {
-            armJoystick.OnJoystickPointerDown -= Magnetize;
-            armJoystick.OnJoystickPointerUp -= MagnetPush;
+            InputManager.PointerDown -= Magnetize;
+            InputManager.PointerUp -= MagnetPush;
         }
 
         private void Update()
@@ -56,37 +54,47 @@ namespace Gisha.scorejam18.Gameplay
         private void Magnetize()
         {
             _magnet.Magnetize();
-            
+
             AudioManager.Instance.PlaySFX("magnet");
         }
 
         private void MagnetPush()
         {
             _magnet.Push();
-            
+
             AudioManager.Instance.StopSFX("magnet");
             AudioManager.Instance.PlaySFX("push");
         }
 
         private void GetInput()
         {
-            _moveVInput = movementJoystick.Vertical;
-            _moveHInput = movementJoystick.Horizontal;
+            _moveVInput = InputManager.GetMovementDirection().y;
+            _moveHInput = InputManager.GetMovementDirection().x;
 
-            _armVInput = armJoystick.Vertical;
-            _armHInput = armJoystick.Horizontal;
+            _armVInput = InputManager.GetArmDirection(transform).y;
+            _armHInput = InputManager.GetArmDirection(transform).x;
         }
 
         private void BodyMove()
         {
+#if !UNITY_ANDROID
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) <= 0f && Mathf.Abs(Input.GetAxisRaw("Vertical")) <= 0f)
+            {
+                _rb.velocity = Vector3.zero;
+                return;
+            }
+#endif
+
             var moveDir = new Vector3(_moveHInput, 0f, _moveVInput).normalized;
             _rb.velocity = moveDir * moveSpeed;
         }
 
         private void ArmRotate()
         {
-            if (Mathf.Abs(armJoystick.Horizontal) <= 0f || Mathf.Abs(armJoystick.Vertical) <= 0f)
+#if UNITY_ANDROID
+            if (Mathf.Abs(_armHInput) <= 0f || Mathf.Abs(_armVInput) <= 0f)
                 return;
+#endif
 
             var dir = new Vector3(_armHInput, 0f, _armVInput).normalized;
             armRig.rotation = Quaternion.LookRotation(dir);
@@ -94,8 +102,15 @@ namespace Gisha.scorejam18.Gameplay
 
         private void BodyRotate()
         {
-            if (Mathf.Abs(movementJoystick.Horizontal) <= 0f || Mathf.Abs(movementJoystick.Vertical) <= 0f)
+#if UNITY_ANDROID
+            if (Mathf.Abs(_moveHInput) <= 0f || Mathf.Abs(_moveVInput) <= 0f)
                 return;
+#endif
+
+#if !UNITY_ANDROID
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) <= 0f && Mathf.Abs(Input.GetAxisRaw("Vertical")) <= 0f)
+                return;
+#endif
 
             var dir = new Vector3(_moveHInput, 0f, _moveVInput).normalized;
             transform.rotation = Quaternion.LookRotation(dir);

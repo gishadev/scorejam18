@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 345902608925842418}
   - component: {fileID: 2533296638793297720}
   - component: {fileID: -2052418492760160022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prefab-terrain_roadCross
   m_TagString: Untagged
   m_Icon: {fileID: 0}

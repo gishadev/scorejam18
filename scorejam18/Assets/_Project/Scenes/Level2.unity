@@ -20794,6 +20794,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5300293300889750508, guid: 65804ed2fd84bb24fbcc508c05ba3819, type: 3}
+      propertyPath: armJoystick
+      value: 
+      objectReference: {fileID: 59604526}
+    - target: {fileID: 5300293300889750508, guid: 65804ed2fd84bb24fbcc508c05ba3819, type: 3}
+      propertyPath: movementJoystick
+      value: 
+      objectReference: {fileID: 2929252283166318504}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65804ed2fd84bb24fbcc508c05ba3819, type: 3}
 --- !u!1001 &6609955871564798661

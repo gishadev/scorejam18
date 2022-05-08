@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6609955871558507467}
   - component: {fileID: 6609955871558507464}
   - component: {fileID: 6609955871558507465}
+  - component: {fileID: 4696414862374055594}
   m_Layer: 5
   m_Name: Dynamic Canvas
   m_TagString: Untagged
@@ -101,6 +102,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4696414862374055594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6609955871558507470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2dbf88933bf29d469f790bbaf7e8659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementJoystick: {fileID: 8294940804582065517}
+  armJoystick: {fileID: 6609955871574058219}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &6609955871574058217
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +132,7 @@ GameObject:
   - component: {fileID: 6609955871574058218}
   - component: {fileID: 6609955871574058219}
   m_Layer: 5
-  m_Name: Arm Joystick
+  m_Name: Left Joystick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +303,7 @@ GameObject:
   - component: {fileID: 8294940804582065507}
   - component: {fileID: 8294940804582065517}
   m_Layer: 5
-  m_Name: Movement Joystick
+  m_Name: Right Joystick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

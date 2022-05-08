@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5475084083338623224}
   - component: {fileID: 7791105029395172402}
   - component: {fileID: -7491228200972803169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prefab-terrain_roadSplit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
